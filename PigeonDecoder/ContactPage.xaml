@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PigeonDecoder.ContactPage"
+    NavigationPage.HasNavigationBar="False"
+    >
+    <StackLayout BackgroundColor="Black">
+        <Label Text="   " FontSize="4"/>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="   " FontSize="10"/>
+            <Frame BackgroundColor="#2196F3" CornerRadius="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Label Text="ViewContact" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" x:Name="Title"/>
+            </Frame>
+            <Label Text="   " FontSize="10"/>
+        </StackLayout>
+        <ScrollView>
+        <StackLayout>
+        <Label Text="   " FontSize="4"/>
+        <Label Text="  First Name" TextColor="White" FontSize="23" x:Name="FirstNameinfo"/>
+        <StackLayout Orientation="Horizontal">
+            <Label Text=" " FontSize="23"/>
+            <Frame CornerRadius="6" Padding="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label BackgroundColor="White" x:Name="FirstName" TextColor="Black" FontSize="23"/>
+            </Frame>
+            <Label Text=" " FontSize="23"/>
+        </StackLayout>
+        <Label Text=" " FontSize="6"/>
+        <Label Text="  Last Name" TextColor="White" FontSize="23" x:Name="LastNameinfo"/>
+        <StackLayout Orientation="Horizontal">
+            <Label Text=" " FontSize="23"/>
+            <Frame CornerRadius="6" Padding="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label BackgroundColor="White" x:Name="LastName" TextColor="Black" FontSize="23"/>
+            </Frame>
+            <Label Text=" " FontSize="23"/>
+        </StackLayout>
+        <Label Text=" " FontSize="6"/>
+        <Label Text="  Address:" TextColor="White" FontSize="23" x:Name="AddressInfo"/>
+            <CollectionView x:Name="ListView1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text=" "/>
+                                <Frame CornerRadius="6" Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="200">
+                                    <Editor IsReadOnly="True" TextColor="Black" Text="{Binding .}" BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                                </Frame>
+                                <Label Text=" "/>
+                            </StackLayout>
+                            <Label Text=" "/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="  Phone:" TextColor="White" FontSize="23" x:Name="PhoneInfo"/>
+            <ListView HasUnevenRows="True" x:Name="PhoneListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text=" "/>
+                                    <Frame CornerRadius="6" Padding="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="PhoneFrame" HeightRequest="30">
+                                        <Label BackgroundColor="White" Text="{Binding .}" TextColor="Black" FontSize="23" />
+                                    </Frame>
+                                    <Label Text=" "/>
+                                </StackLayout>
+                                <Label Text=" "/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text=" " FontSize="6"/>
+            <Label Text="  Email:" TextColor="White" FontSize="23" x:Name="EmailInfo"/>
+            <StackLayout Orientation="Horizontal">
+            <Label Text=" " FontSize="23"/>
+            <Frame CornerRadius="6" Padding="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label BackgroundColor="White" x:Name="Email" TextColor="Black" FontSize="23"/>
+            </Frame>
+            <Label Text=" " FontSize="6"/>
+            </StackLayout>
+            <Label Text=" " FontSize="6"/>
+            <Label Text="  Date Of Birth:" TextColor="White" FontSize="23" x:Name="DOBInfo"/>
+            <StackLayout Orientation="Horizontal">
+            <Label Text=" " FontSize="23"/>
+            <Frame CornerRadius="6" Padding="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label BackgroundColor="White" x:Name="DOB" TextColor="Black" FontSize="23"/>
+            </Frame>
+            <Label Text=" " FontSize="6"/>
+            </StackLayout>
+            <Label Text=" " FontSize="6"/>
+            <Label Text="  Organisation:" TextColor="White" FontSize="23" x:Name="ORGInfo"/>
+            <StackLayout Orientation="Horizontal">
+            <Label Text=" " FontSize="23"/>
+            <Frame CornerRadius="6" Padding="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label BackgroundColor="White" x:Name="ORG" TextColor="Black" FontSize="23"/>
+            </Frame>
+            <Label Text=" " FontSize="23"/>
+            </StackLayout>
+            <Label Text=" " FontSize="6"/>
+            <StackLayout VerticalOptions="End" HorizontalOptions="Center" Orientation="Horizontal">
+            <Label Text=" " FontSize="23"/>
+            <StackLayout VerticalOptions="End" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Label Text=" " FontSize="23"/>
+            <Frame CornerRadius="6" Padding="3" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Clicked="Backbutton_Clicked" BackgroundColor="White" x:Name="Backbutton" TextColor="Blue" FontSize="23" Text="Back"/>
+            </Frame>
+            <Label Text=" " FontSize="6"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="End" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Label Text=" " FontSize="23"/>
+            <Frame CornerRadius="6" Padding="3" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Clicked="Sharebutton_Clicked" BackgroundColor="White" x:Name="Sharebutton" TextColor="Blue" FontSize="23" Text="Share" />
+            </Frame>
+            <Label Text=" " FontSize="23"/>
+            </StackLayout>
+            <Label Text=" " FontSize="23"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    </StackLayout>
+</ContentPage>
